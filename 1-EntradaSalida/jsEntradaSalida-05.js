@@ -13,7 +13,7 @@ function mostrar()
 	
 	edad = document.getElementById("txtIdEdad").value;
 
-	alert("su nombre es " +nombre + " y su edad es de " + edad + " años");
+	alert("su nombre es " +nombre + " y tiene " + edad + " años");
 
 
 

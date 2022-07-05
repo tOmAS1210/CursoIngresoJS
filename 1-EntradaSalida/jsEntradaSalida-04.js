@@ -13,10 +13,7 @@ function mostrar()
 	
 	document.getElementById("txtIdNombre").value = nombre;
 
-	/*espero asi sea el ejercicio, me tarde como 20 minutos probando un monton de cosas
-	siempre poniendo "nombre" primero, seguido del = y el Id, hasta que mande el nombre
-	al final, y me acabo funcionando como yo creo que debe de funcionar,
-	si no es asi entonces tendre que esperar a mañana y ver como se hace jajajs*/
+
 
 }
 
