@@ -33,13 +33,13 @@ function Promedio ()
     let precio3;
     let total;
 
-    precio1 = parseInt(document.getElementById("txtIdPrecioUno").value);
-    precio2 = parseInt(document.getElementById("txtIdPrecioDos").value);
-    precio3 = parseInt(document.getElementById("txtIdPrecioTres").value);
+    precio1 = parseFloat(document.getElementById("txtIdPrecioUno").value);
+    precio2 = parseFloat(document.getElementById("txtIdPrecioDos").value);
+    precio3 = parseFloat(document.getElementById("txtIdPrecioTres").value);
 
     total = (precio1 + precio2 + precio3)/3;
 
-    alert("el promedio de los tres productos es: " +total);
+    alert("el promedio de los tres productos es: " +total.toFixed(2));
 
 
     
@@ -53,16 +53,16 @@ function PrecioFinal ()
     let sumatotal;
     let total;
 
-    precio1 = parseInt(document.getElementById("txtIdPrecioUno").value);
-    precio2 = parseInt(document.getElementById("txtIdPrecioDos").value);
-    precio3 = parseInt(document.getElementById("txtIdPrecioTres").value);
+    precio1 = parseFloat(document.getElementById("txtIdPrecioUno").value);
+    precio2 = parseFloat(document.getElementById("txtIdPrecioDos").value);
+    precio3 = parseFloat(document.getElementById("txtIdPrecioTres").value);
 
 
     sumatotal = precio1 + precio2 + precio3;
 
     total = sumatotal + (sumatotal * 21 / 100);
 
-    alert("el precio final (mas IVA 21%) es de: " +total);
+    alert("el precio final (mas IVA 21%) es de: " +total.toFixed(2));
 
 
     

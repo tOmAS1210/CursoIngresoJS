@@ -26,7 +26,7 @@ function Rectangulo ()
 function Circulo () 
 {
     let radio;
-    let resultado;
+    let perimetro;
 
     radio = parseInt(document.getElementById("txtIdRadio").value);
     perimetro = (radio * 3.14 * 2);

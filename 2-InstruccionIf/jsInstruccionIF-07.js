@@ -1,8 +1,26 @@
+/*
+thomas aguilar arguello
+div x
+*/
+
 function mostrar()
 {
-	//tomo la edad  
-	alert("ok");
-	
+	let edad;
+	let estadocivil;
+
+
+	edad = document.getElementById("txtIdEdad").value;
+	edad = parseInt(edad);
+
+
+	estadocivil = document.getElementById("estadoCivil").value;
+
+	if(edad<18 && estadocivil != "Soltero")
+	{
+		alert("Es muy pequeño para NO ser soltero");
+	}
+
+
 
 
 }//FIN DE LA FUNCIÓN
