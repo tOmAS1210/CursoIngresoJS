@@ -8,7 +8,75 @@ E.	Si el importe final con descuento suma más de $120  se debe sumar un 10% de 
  ”Usted pago X de IIBB.”, siendo X el impuesto que se pagó. 
 
  */
-function CalcularPrecio () 
+function CalcularPrecio() 
 {
- 	
+    let precioLampara;
+    let cantidadLamparas;
+    let precioBruto;
+    let descuento;
+    let precioDescuento;
+    let marcaLampara;
+    
+    
+    precioLampara = 35;
+    cantidadLamparas = document.getElementById("txtIdCantidad").value;
+    cantidadLamparas = parseInt(cantidadLamparas);
+    precioBruto = cantidadLamparas * precioLampara;
+    
+    marcaLampara = document.getElementById("Marca").value;
+
+    
+    if(cantidadLamparas>5)//A
+    {
+        descuento = (precioBruto *50) / 100;
+    }
+    else if(cantidadLamparas == 5)//B
+    {   
+        if(marcaLampara == "ArgentinaLuz")
+        {
+        descuento = (precioBruto *40) / 100;
+        }
+        else//B
+        {
+        descuento = (precioBruto *30) / 100;
+        }
+    }
+    else if(cantidadLamparas == 4)//C
+    {
+        if(marcaLampara == "ArgentinaLuz" || marcaLampara == "FelipeLamparas")
+        {
+        descuento = (precioBruto *25) / 100;
+        }
+        else//C
+        {
+        descuento = (precioBruto *20) / 100;
+        }
+    }
+    else if(cantidadLamparas == 3)//D correcto
+    {   
+        if(marcaLampara == "ArgentinaLuz")
+        {
+            descuento = (precioBruto *15) / 100;
+        }
+        else if(marcaLampara == "FelipeLamparas")//D
+        {
+            descuento = (precioBruto *10) / 100;
+        }
+        else//D
+        {
+            descuento = (precioBruto *5) / 100;//D
+        }
+        
+    }
+
+    precioDescuento = precioBruto - descuento;
+    document.getElementById("txtIdprecioDescuento").value = precioDescuento;
+
+    if(precioDescuento>120)
+    {
+        precioDescuento = (precioDescuento *10) /100;
+        document.getElementById("txtIdprecioDescuento").value = "Usted pagó " + precioDescuento + "$ de impuestos";
+    }
+    
+
 }

@@ -24,5 +24,31 @@ function sumar()
 	resultado = numero1 + numero2;
 	
 	alert("el resultado de la suma es de: " +resultado);
+
+
+	/*let dolarBlue;
+	let dolarOficial;
+	let diferencia;
+	let total;
+
+	dolarBlue = document.getElementById("txtIdNumeroUno").value;
+	dolarOficial = document.getElementById("txtIdNumeroDos").value;
+
+	dolarBlue = parseInt(dolarBlue);
+	dolarOficial = parseInt(dolarOficial);
+
+	diferencia = (dolarBlue / dolarOficial) * 100;
+
+	total = diferencia - 100;
+
+
+
+	alert("la diferencia de porcentaje es de: " +total.toFixed(2));*/
+	//ejercicio hecho el sabado
+
+
+
+
+
 }
 
