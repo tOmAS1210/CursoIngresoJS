@@ -72,11 +72,9 @@ function CalcularPrecio()
     precioDescuento = precioBruto - descuento;
     document.getElementById("txtIdprecioDescuento").value = precioDescuento;
 
-    if(precioDescuento>120)
+    if(precioBruto>120)//E
     {
         precioDescuento = (precioDescuento *10) /100;
         document.getElementById("txtIdprecioDescuento").value = "Usted pagó " + precioDescuento + "$ de impuestos";
-    }
-    
-
+    }    
 }
