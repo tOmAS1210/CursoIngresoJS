@@ -9,11 +9,87 @@ F.	Nacionalidad, “A” para argentinos, “E” para extranjeros, “N” para
  */
 function ComenzarIngreso () 
 {
- 	//definicion de variables
- 	var edadIngresada;
- 	var sexoIngresado;
- 	var estadoCivilIngresado;
+	let edad;
+	let sexo;
+	let estadoCivil;
+	let mensaje;
+	let sueldoBruto;
+	let legajo;
+	let Nacionalidad;
+	let respuesta;
 
+	do
+	{
+		edad = prompt("ingrese su edad entre 18 y 90 años");
+		edad = parseInt(edad);
+		while((isNaN(edad)) || (edad>90 || edad<18))//A
+		{
+			edad = prompt("error. ingrese correctamente su edad, entre 18 y 90 años");
+			edad = parseInt(edad);
+		}
+		document.getElementById("txtIdEdad").value = edad;
 
+		sexo = prompt("ingrese su sexo m/f");
+		while(sexo != 'f' && sexo != 'm')//B
+		{
+			sexo = prompt("error. ingrese su sexo m/f");
+		}
+		document.getElementById("txtIdSexo").value = sexo;
 
+		estadoCivil = prompt("ingrese su estado civil 1.soltero 2.casado 3.divorciado 4.viudo"); //C
+		estadoCivil = parseInt(estadoCivil);
+		while(isNaN(estadoCivil) || estadoCivil>4 || estadoCivil<0)
+		{
+			estadoCivil = prompt("ingrese correctamente su estadocivil 1.soltero 2.casado 3.divorciado 4.viudo");
+			estadoCivil = parseInt(estadoCivil);
+		}
+		switch(estadoCivil)//C
+		{
+			case 1:
+				mensaje = "soltero";
+			break;
+			case 2:
+				mensaje = "casado";
+			break;
+			case 3:
+				mensaje = "divorciado";
+			break;
+			case 4:
+				mensaje = "viudo"
+			break;
+		}
+		document.getElementById("txtIdEstadoCivil").value = mensaje;
+
+		sueldoBruto = prompt("ingrese su sueldo bruto");//D
+		sueldoBruto = parseInt(sueldoBruto);
+		while(isNaN(sueldoBruto) || sueldoBruto<8000)
+		{
+			sueldoBruto = prompt("ingrese un sueldo mayor a 8 mil");
+			sueldoBruto = parseInt(sueldoBruto);
+		}
+
+		document.getElementById("txtIdSueldo").value = sueldoBruto;
+
+		legajo = prompt("ingrese su legajo de 4 cifras sin 0 en la izquierda");//E
+		legajo = parseInt(legajo);
+		while(isNaN(legajo)	|| legajo>9999 || legajo<999)
+		{
+			legajo = prompt("error. vuelve a ingresar el legajo sin 0 en la izquierda");
+			legajo = parseInt(legajo);
+		}
+		document.getElementById("txtIdLegajo").value = legajo;
+
+		Nacionalidad = prompt("ingrese su nacionalidad  A.argentinos E.extrangeros N.nacionalizados");//F
+		Nacionalidad.toLowerCase();
+		while(Nacionalidad != 'A' && Nacionalidad != 'E' && Nacionalidad != 'N')
+		{
+			Nacionalidad = prompt("error ingrese su nacionalidad  A.argentinos E.extrangeros N.nacionalizados");
+		}
+		
+		document.getElementById("txtIdNacionalidad").value = Nacionalidad;
+
+		respuesta = prompt("desea continuar ingresando datos? s/n");
+	}while(respuesta == "s");
+
+	
 }
