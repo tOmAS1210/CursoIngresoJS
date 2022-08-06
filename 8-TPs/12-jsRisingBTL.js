@@ -12,10 +12,11 @@ function ComenzarIngreso ()
 	let edad;
 	let sexo;
 	let estadoCivil;
-	let mensaje;
+	let textoEstadoCivil;
 	let sueldoBruto;
 	let legajo;
 	let Nacionalidad;
+	let textoNacionalidad;
 	let respuesta;
 
 	do
@@ -30,15 +31,17 @@ function ComenzarIngreso ()
 		document.getElementById("txtIdEdad").value = edad;
 
 		sexo = prompt("ingrese su sexo m/f");
+		sexo = sexo.toLowerCase();
 		while(sexo != 'f' && sexo != 'm')//B
 		{
 			sexo = prompt("error. ingrese su sexo m/f");
+			sexo = sexo.toLowerCase();
 		}
 		document.getElementById("txtIdSexo").value = sexo;
 
 		estadoCivil = prompt("ingrese su estado civil 1.soltero 2.casado 3.divorciado 4.viudo"); //C
 		estadoCivil = parseInt(estadoCivil);
-		while(isNaN(estadoCivil) || estadoCivil>4 || estadoCivil<0)
+		while(isNaN(estadoCivil) || estadoCivil>4 || estadoCivil<1)
 		{
 			estadoCivil = prompt("ingrese correctamente su estadocivil 1.soltero 2.casado 3.divorciado 4.viudo");
 			estadoCivil = parseInt(estadoCivil);
@@ -46,19 +49,19 @@ function ComenzarIngreso ()
 		switch(estadoCivil)//C
 		{
 			case 1:
-				mensaje = "soltero";
+				textoEstadoCivil = "soltero";
 			break;
 			case 2:
-				mensaje = "casado";
+				textoEstadoCivil = "casado";
 			break;
 			case 3:
-				mensaje = "divorciado";
+				textoEstadoCivil = "divorciado";
 			break;
 			case 4:
-				mensaje = "viudo"
+				textoEstadoCivil = "viudo"
 			break;
 		}
-		document.getElementById("txtIdEstadoCivil").value = mensaje;
+		document.getElementById("txtIdEstadoCivil").value = textoEstadoCivil;
 
 		sueldoBruto = prompt("ingrese su sueldo bruto");//D
 		sueldoBruto = parseInt(sueldoBruto);
@@ -80,15 +83,30 @@ function ComenzarIngreso ()
 		document.getElementById("txtIdLegajo").value = legajo;
 
 		Nacionalidad = prompt("ingrese su nacionalidad  A.argentinos E.extrangeros N.nacionalizados");//F
-		Nacionalidad.toLowerCase();
+		Nacionalidad = Nacionalidad.toUpperCase();
 		while(Nacionalidad != 'A' && Nacionalidad != 'E' && Nacionalidad != 'N')
 		{
 			Nacionalidad = prompt("error ingrese su nacionalidad  A.argentinos E.extrangeros N.nacionalizados");
+			Nacionalidad = Nacionalidad.toUpperCase();
+		}
+		switch(Nacionalidad)
+		{
+			case 'A':
+				textoNacionalidad = "Argentino"
+			break;
+			case 'E':
+				textoNacionalidad = "Extrangero"
+			break;
+			case 'N':
+				textoNacionalidad = "Nacionalizado"
+			break;
 		}
 		
-		document.getElementById("txtIdNacionalidad").value = Nacionalidad;
+		
+		document.getElementById("txtIdNacionalidad").value = textoNacionalidad;
 
 		respuesta = prompt("desea continuar ingresando datos? s/n");
+		respuesta = respuesta.toLowerCase;
 	}while(respuesta == "s");
 
 	
